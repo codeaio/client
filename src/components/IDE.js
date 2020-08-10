@@ -17,7 +17,7 @@ export default class IDE extends Component {
             stdout: null,
             stderr: null,
             error: null,
-            API: "https://stormy-inlet-61516.herokuapp.com/task",
+            API: "http://localhost:5000/task",
             id: null,
             cpp: '#include <iostream>\n\nusing namespace std;\n\nint main() {\n  cout << "Hello, World!" << endl;\n}'
         };
