@@ -17,7 +17,7 @@ export default class IDE extends Component {
       stdout: null,
       stderr: null,
       error: null,
-      API: "http://localhost:9000/task",
+      API: "http://localhost:5000/task",
       id: null,
       cpp:
         '#include <iostream>\n\nusing namespace std;\n\nint main() {\n  cout << "Hello, World!" << endl;\n}',
