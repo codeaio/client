@@ -19,6 +19,7 @@ export default class IDE extends Component {
             error: null,
             API: "http://localhost:5000/task",
             id: null,
+            uid: null,
             cpp: '#include <iostream>\n\nusing namespace std;\n\nint main() {\n  cout << "Hello, World!" << endl;\n}'
         };
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -39,7 +40,7 @@ export default class IDE extends Component {
             }
         });
     }
-    
+
     update() {
         // console.log(this.state.id);
         if (this.state.id) {
@@ -78,7 +79,8 @@ export default class IDE extends Component {
         console.log(code);
         postData(this.state.API + "/create", {
             code: code,
-            input: input
+            input: input,
+            uid: this.state.uid
         }).then(
             (result) => { 
                 console.log(result);
@@ -90,6 +92,17 @@ export default class IDE extends Component {
     }
 
     render() {
+        var url = window.location.href;
+        var queries = url.replace(/^\?/, '').split('&');
+        var searchObject = {};
+        var split;
+
+        for (let i = 0; i < queries.length; i++ ) {
+            split = queries[i].split('=');
+            searchObject[split[0]] = split[1];
+        }
+        console.log(searchObject);
+        this.state.uid = searchObject["http://localhost:3001/?uid"]
         const { cpp } = this.state;
         var option = {
             mode: 'text/x-c++src',
