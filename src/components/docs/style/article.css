@@ -1,0 +1,13 @@
+.Article {
+    display: inline-block;
+    padding-top: 3%;
+    padding-left: 20%;
+}
+.Article h1{
+    font-size: 60px;
+}
+.Article p {
+    margin-top: 1.5em;
+    font-size: 30px;
+}
+

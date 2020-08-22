@@ -1,0 +1,86 @@
+.Main {
+  height: 100vh;
+  background-color: #222831;
+  color: #eeeeee;
+}
+
+.Main-Block {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  top: 45%;
+  transform: translateY(-50%);
+}
+
+.Main-Block h1 {
+  font-size: 4em;
+  font-weight: 800;
+  letter-spacing: .05em;
+}
+
+.Main-Block h2 {
+  font-weight: 400;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.Buttons {
+  line-height: 70px;
+}
+
+.Buttons a {
+  margin-right: 20px;
+  background-color: #32e0c4;
+  color: #222831;
+  font-size: 1.1em;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.Main code {
+  font-size: 1.5em;
+}
+
+/* blinking effect */
+p {
+  font-weight: 400;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+p span.typed-text {
+  font-weight: normal;
+  color: #32e0c4;
+}
+
+p span.cursor {
+  display: inline-block;
+  background-color: rgb(34, 34, 34);
+  margin-left: 0.1rem;
+  width: 3px;
+  animation: blink 1s infinite;
+}
+
+p span.cursor.typing {
+  animation: none;
+}
+
+@keyframes blink {
+  0% {
+    background-color: #ccc;
+  }
+  49% {
+    background-color: #ccc;
+  }
+  50% {
+    background-color: transparent;
+  }
+  99% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #ccc;
+  }
+}
