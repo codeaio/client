@@ -102,7 +102,7 @@ export default class IDE extends Component {
             searchObject[split[0]] = split[1];
         }
         console.log(searchObject);
-        this.state.uid = searchObject["http://localhost:3001/?uid"]
+        this.state.uid = searchObject["http://localhost:3000/?uid"]
         const { cpp } = this.state;
         var option = {
             mode: 'text/x-c++src',

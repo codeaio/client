@@ -175,15 +175,17 @@ input[type="submit"]:hover {
 }
 
 .Box-Grid {
-  background-color: blue;
+  background-color: #222831;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  padding: 300px;
-  grid-gap: 40px;
+  padding: 200px;
+  grid-gap: 80px;
 }
 
 .Box {
-  background-color: white;
+  background-color: #393e46;
+  color: #eee;
+  z-index: 30;
   padding: 40px;
   border-radius: 10px;
 }
@@ -203,8 +205,9 @@ input[type="submit"]:hover {
   display: inline-block;
   margin-top: 30px;
   font-size: 1.1em;
-  background-color: blue;
-  color: white;
+  background-color: #32e0c4;
+  border-radius: 4px;
+  color: #222831;
   padding: 5px 10px;
   cursor: pointer;
 }

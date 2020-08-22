@@ -2,18 +2,23 @@
     background-color: rgba(0, 0, 0, .1);
     display: inline-block;
     padding: 40px;
+    padding-left: 10em;
     height: 100vh;
-    font-size: 2em;
-    position: fixed;
+    font-size: 1.2em;
 }
 
 .Sidepan li {
     margin-top: 20px;
     padding: 0 20px;
+    cursor: pointer;
 }
 
 .Sidepan .active {
     margin-top: 20px;
-    background-color: rgba(0, 0, 0, .2);
+    color: #32e0c4;
     border-radius: 5px;
+}
+
+.Sidepan li:hover {
+    background: rgba(0, 0, 0, .1);
 }

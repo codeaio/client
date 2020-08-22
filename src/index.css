@@ -12,6 +12,7 @@
 
 body {
   margin: 0;
+  background-color: #222831;
   font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import "./style/main.css";
+import {
+  Link
+} from "react-router-dom";
+
 export default class Main extends Component {
   componentDidMount() {
     const typedTextSpan = document.querySelector(".typed-text");
@@ -51,6 +55,8 @@ export default class Main extends Component {
     });
   }
   render() {
+    var noneStyle = { color: 'inherit', textDecoration: 'inherit'};
+
     return (
       <div className="Main">
         <div className="Main-Block">
@@ -60,9 +66,11 @@ export default class Main extends Component {
               Supported Language <span className="typed-text"></span>
               <span className="cursor">&nbsp;</span>
             </p>
-            <div className="Buttons">
-              <a>Try now</a>
-            </div>
+              <Link to="/IDE">
+                <div className="Buttons">
+                    <a>Try now</a>
+                </div>
+              </Link>
           </div>
           <div className="Bg"></div>
         </div>

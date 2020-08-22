@@ -1,3 +1,5 @@
 .Docs {
-    padding-top: 5em;
+    padding-top: 4em;
+    color: #eee;
+    display: flex;
 }
