@@ -8,6 +8,7 @@ import Login from './components/user/login';
 import Signup from './components/user/signup';
 import IDE from './components/IDE';
 import Card from './components/user/card';
+import Layout from './components/dashboard/layout';
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
@@ -22,6 +23,7 @@ function App() {
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
         <Route path="/IDE" component={IDE} />
+        <Route path="/dashboard" component={Layout} />
         <Route path="/card">
           <Card type="signup" />
         </Route>
