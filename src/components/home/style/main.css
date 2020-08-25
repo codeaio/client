@@ -15,7 +15,7 @@
 .Main-Block h1 {
   font-size: 4em;
   font-weight: 800;
-  letter-spacing: .05em;
+  letter-spacing: 0.05em;
 }
 
 .Main-Block h2 {
@@ -26,6 +26,7 @@
 
 .Buttons {
   line-height: 70px;
+  width: 130px;
 }
 
 .Buttons a {

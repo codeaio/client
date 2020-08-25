@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import "./style/main.css";
-import {
-  Link
-} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default class Main extends Component {
   componentDidMount() {
@@ -11,8 +9,8 @@ export default class Main extends Component {
 
     const textArray = ["C++", "Java", "HTML", "CSS", "Javascript"];
     const typingDelay = 150;
-    const erasingDelay = 100;
-    const newTextDelay = 1500; // Delay between current and next text
+    const erasingDelay = 250;
+    const newTextDelay = 250; // Delay between current and next text
     let textArrayIndex = 0;
     let charIndex = 0;
 
@@ -55,7 +53,7 @@ export default class Main extends Component {
     });
   }
   render() {
-    var noneStyle = { color: 'inherit', textDecoration: 'inherit'};
+    var noneStyle = { color: "inherit", textDecoration: "inherit" };
 
     return (
       <div className="Main">
@@ -66,11 +64,11 @@ export default class Main extends Component {
               Supported Language <span className="typed-text"></span>
               <span className="cursor">&nbsp;</span>
             </p>
-              <Link to="/IDE">
-                <div className="Buttons">
-                    <a>Try now</a>
-                </div>
-              </Link>
+            <Link to="/IDE">
+              <div class="Buttons">
+                <a>Try now</a>
+              </div>
+            </Link>
           </div>
           <div className="Bg"></div>
         </div>
