@@ -1,5 +1,5 @@
 .Footer {
-  
+  transition: all 2s;
 }
 
 section .wave {
@@ -59,8 +59,10 @@ section .wave.wave6 {
   opacity: 0.7;
   animation-delay: -5s;
   bottom: 20;
-} 
-
+}
+.disappear {
+  opacity: 0;
+}
 @keyframes animate {
   0% {
     background-position-x: -3000px;

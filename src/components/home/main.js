@@ -8,8 +8,8 @@ export default class Main extends Component {
     const cursorSpan = document.querySelector(".cursor");
 
     const textArray = ["C++", "Java", "HTML", "CSS", "Javascript"];
-    const typingDelay = 150;
-    const erasingDelay = 250;
+    const typingDelay = 250;
+    const erasingDelay = 150;
     const newTextDelay = 250; // Delay between current and next text
     let textArrayIndex = 0;
     let charIndex = 0;
