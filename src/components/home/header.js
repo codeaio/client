@@ -1,35 +1,98 @@
 import React from "react";
 import "./style/header.css";
 import Card from "../user/card";
+import { connect } from 'react-redux';
+import { Link } from "react-router-dom";
+import { logoutUser } from "../../actions/user";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-
-export default class Header extends React.Component {
+class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       popup: "none",
     };
+    this.close = this.close.bind(this);
   }
+  
   componentDidMount() {
     window.addEventListener("scroll", () => {
       var header = document.querySelector(".Header");
-      header.classList.toggle("sticky", window.scrollY > 0);
+      if (this.props.stylish)
+        header.classList.toggle("sticky", window.scrollY > 0);
+      else {
+        header.className = "Header sticky";
+      }
     });
   }
+
+  close() {
+    this.setState({
+      popup: "none"
+    });
+  }
+
   render() {
     var noneStyle = { color: "inherit", textDecoration: "inherit" };
     var elem;
-    console.log(this.state);
-    if (this.state.popup == "login") {
-      elem = <Card type="login" />;
+    if (this.state.popup === "login") {
+      elem = <Card type="login" close={this.close} />;
     }
-    if (this.state.popup == "signup") {
-      elem = <Card type="signup" />;
+    if (this.state.popup === "signup") {
+      elem = <Card type="signup" close={this.close} />;
     }
-    console.log(elem);
+    var cname = "Header";
+    if (!this.props.stylish) cname += " sticky";
+
+    var login_register = (
+      <div className="buttons">
+        <div
+          className="button"
+          onClick={() => {
+            if (this.state.popup === "login")
+              this.setState({ popup: "none" });
+            else this.setState({ popup: "login" });
+          }}
+        >
+          <span>Login</span>
+        </div>
+        <div
+          className="button"
+          onClick={() => {
+            if (this.state.popup === "signup")
+              this.setState({ popup: "none" });
+            else this.setState({ popup: "signup" });
+          }}
+        >
+          <span>Register</span>
+        </div>
+      </div>
+    );
+    
+    console.log(this.props);
+    var header_right;
+    if (typeof(this.props.user.user) == "undefined") {
+      header_right = login_register;
+    } else {
+      var user = (
+        <div className="buttons" >
+          <div className="button">
+            <span>Dashboard</span>
+          </div>
+          <div
+            className="button red"
+            onClick={() => {
+              this.props.logout();
+            }}
+          >
+            <span>logout</span>
+          </div>
+        </div>
+      );
+      header_right = user;
+    }
+
     return (
-      <div className="Header">
+      <div className={cname}>
         <div className="Nav-Block">
           <div className="Logo">
             <Link to="/" style={noneStyle}>
@@ -39,50 +102,47 @@ export default class Header extends React.Component {
           <div className="Nav">
             <Link to="/docs" style={noneStyle}>
               <div className="Item">
-                <a>Docs</a>
+                Docs
               </div>
             </Link>
             <Link to="/docs" style={noneStyle}>
               <div className="Item">
-                <a>Pricing</a>
+                Pricing
               </div>
             </Link>
             <Link to="/IDE" style={noneStyle}>
               <div className="Item">
-                <a>IDE</a>
+                IDE
               </div>
             </Link>
             <Link to="/docs" style={noneStyle}>
               <div className="Item">
-                <a>Contact Us</a>
+                Contact Us
               </div>
             </Link>
           </div>
-          <div className="buttons">
-            <div
-              className="button"
-              onClick={() => {
-                if (this.state.popup == "login")
-                  this.setState({ popup: "none" });
-                else this.setState({ popup: "login" });
-              }}
-            >
-              <span>Login</span>
-            </div>
-            <div
-              className="button"
-              onClick={() => {
-                if (this.state.popup == "signup")
-                  this.setState({ popup: "none" });
-                else this.setState({ popup: "signup" });
-              }}
-            >
-              <span>Register</span>
-            </div>
-          </div>
+          { header_right }
         </div>
         {elem}
       </div>
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    user: state.user
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    logout: () => {
+      dispatch(logoutUser());
+    }
+  }
+}
+
+Header = connect(mapStateToProps, mapDispatchToProps)(Header);
+
+export default Header;

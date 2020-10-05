@@ -6,7 +6,7 @@ export default class Card extends React.Component {
   constructor(props) {
     super(props);
   }
-
+  
   render() {
     var element;
 
@@ -16,9 +16,13 @@ export default class Card extends React.Component {
       element = (<SignUp />);
     }
 
+    console.log(this.props);
     return (
       <div className="PopUp">
-        { element }
+        <div className="Close" onClick={this.props.close}>X</div>
+        <div className="Card">
+          { element }
+        </div>
       </div>
     );
   }

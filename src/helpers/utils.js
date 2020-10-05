@@ -1,3 +1,5 @@
+import { API } from '../config';
+
 export default async function postData(url='', data = {}) {
   const response = await fetch(url, {
     method: 'POST',
@@ -12,3 +14,12 @@ export default async function postData(url='', data = {}) {
   });
   return response.json();
 };
+
+export async function register(user = {}) {
+  return postData(API + "/users/signup", user);
+}
+
+export async function login(user = {}) {
+  console.log('login');
+  return postData(API + '/users/signin', user);
+}

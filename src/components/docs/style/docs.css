@@ -1,5 +1,6 @@
 .Docs {
-  padding-top: 6em;
+  min-height: 100vh;
+  padding-top: 4em;
   color: #eee;
   display: flex;
 }

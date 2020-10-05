@@ -5,7 +5,8 @@ export default class Footer extends Component {
   componentDidMount() {
     window.addEventListener("scroll", () => {
       var footer = document.querySelector(".Footer");
-      footer.classList.toggle("disappear", window.scrollY > 0);
+      if (footer)
+        footer.classList.toggle("disappear", window.scrollY > 0);
     });
   }
   render() {

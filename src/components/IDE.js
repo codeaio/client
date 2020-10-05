@@ -8,6 +8,8 @@ import 'codemirror/addon/edit/matchbrackets.js';
 import 'codemirror/addon/edit/closetag.js';
 import 'codemirror/addon/edit/matchtags.js';
 import 'codemirror/addon/selection/active-line.js';
+import { API } from '../config.js';
+import Header from './home/header';
 
 export default class IDE extends Component {
     constructor(props) {
@@ -17,7 +19,7 @@ export default class IDE extends Component {
             stdout: null,
             stderr: null,
             error: null,
-            API: "http://localhost:5000/task",
+            API: API + "/task",
             id: null,
             uid: null,
             cpp: '#include <iostream>\n\nusing namespace std;\n\nint main() {\n  cout << "Hello, World!" << endl;\n}'
@@ -83,12 +85,10 @@ export default class IDE extends Component {
             uid: this.state.uid
         }).then(
             (result) => { 
-                console.log(result);
                 this.state.id = result._id;
                 status.innerText = "running";
             }
         );
-
     }
 
     render() {
@@ -116,52 +116,55 @@ export default class IDE extends Component {
             styleActiveLine: {nonEmpty: true},
         }
         return (
-            <div>
-                <input type="checkbox" id="color-mode"></input>
-                <div className="body">
-                    <div className="main">
-                        <div className="header">
-                            <h1 className="heading">C++ IDE</h1>
-                            <label htmlFor="color-mode" id="color">Dark</label>
-                        </div>
-                        <form onSubmit={this.handleSubmit}>
-                            <div className="ide">
-                                <div className="editor">
-                                    <CodeMirror 
-                                        value={cpp}
-                                        options={option}
-                                        onBeforeChange={(editor, data, cpp) => {
-                                            this.setState({ cpp });
-                                        }}
-                                    />
-                                    <div className="submit">
-                                        <input type="submit" value="Run"></input><br></br>
-                                        <h4><span id="status"></span></h4>
-                                    </div>
-                                </div>
-                                <div className="io">
-                                    <div className="input">
-                                        <label htmlFor="input">Input</label><br></br>
-                                        <textarea id="input" name="input"></textarea><br></br>
-                                    </div>
-                                    <div>
-                                        <label htmlFor="stdout">stdout</label><br></br>
-                                        <textarea id="stdout" name="stdout">{ this.state.stdout }</textarea><br></br>
-                                    </div>
-                                    <div>
-                                        <label htmlFor="stderr">stderr</label><br></br>
-                                        <textarea id="stderr" name="stderr">{ this.state.stderr }</textarea><br></br>
-                                    </div>
-                                </div>
+            <>
+                <Header stylish={false}/>
+                <div>
+                    <input type="checkbox" id="color-mode"></input>
+                    <div className="body">
+                        <div className="main">
+                            <div className="header">
+                                <h1 className="heading">C++ IDE</h1>
+                                <label htmlFor="color-mode" id="color">Dark</label>
                             </div>
-                                <div className="err">
-                                    <label htmlFor="error">Error</label><br></br>
-                                    <textarea id="error">{ this.state.error }</textarea><br></br>
+                            <form onSubmit={this.handleSubmit}>
+                                <div className="ide">
+                                    <div className="editor">
+                                        <CodeMirror 
+                                            value={cpp}
+                                            options={option}
+                                            onBeforeChange={(editor, data, cpp) => {
+                                                this.setState({ cpp });
+                                            }}
+                                        />
+                                        <div className="submit">
+                                            <input type="submit" value="Run"></input><br></br>
+                                            <h4><span id="status"></span></h4>
+                                        </div>
+                                    </div>
+                                    <div className="io">
+                                        <div className="input">
+                                            <label htmlFor="input">Input</label><br></br>
+                                            <textarea id="input" name="input"></textarea><br></br>
+                                        </div>
+                                        <div>
+                                            <label htmlFor="stdout">stdout</label><br></br>
+                                            <textarea id="stdout" name="stdout">{ this.state.stdout }</textarea><br></br>
+                                        </div>
+                                        <div>
+                                            <label htmlFor="stderr">stderr</label><br></br>
+                                            <textarea id="stderr" name="stderr">{ this.state.stderr }</textarea><br></br>
+                                        </div>
+                                    </div>
                                 </div>
-                        </form>                
+                                    <div className="err">
+                                        <label htmlFor="error">Error</label><br></br>
+                                        <textarea id="error">{ this.state.error }</textarea><br></br>
+                                    </div>
+                            </form>                
+                        </div>
                     </div>
                 </div>
-            </div>
+            </>
         )
     }
 }
