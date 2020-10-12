@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
 
 #color-mode {
   float: left;
@@ -8,11 +7,11 @@
 }
 
 .color {
-  content: 'Dark';
+  content: "Dark";
 }
 
 #color-mode:checked ~ .body {
-  filter: invert(.87) hue-rotate(180deg);
+  filter: invert(0.87) hue-rotate(180deg);
 }
 
 .main {
@@ -27,7 +26,7 @@
 
 .header label {
   display: inline-block;
-  background-color: rgba(0, 0, 0, .1);
+  background-color: rgba(0, 0, 0, 0.1);
   margin: auto 0;
   padding: 3px 15px;
   cursor: pointer;
@@ -54,7 +53,7 @@
   width: 100%;
   font-size: 1em;
   border-radius: 10px;
-  border: 1px solid #EDF5FC;
+  border: 1px solid #edf5fc;
 }
 
 .io {
@@ -76,25 +75,25 @@ textarea {
   border: none;
   outline: none;
   padding: 7px;
-  border: 1px solid #EDF5FC;
+  border: 1px solid #edf5fc;
 }
 
 textarea:focus {
-  border: 1px solid #96EDBB;
+  border: 1px solid #96edbb;
 }
 
 .CodeMirror-code {
   font-size: 1em;
   line-height: 1.1em;
-  font-family: 'Ubuntu Mono', monospace;
+  font-family: "Ubuntu Mono", monospace;
 }
 
 .CodeMirror-sizer {
-  padding-top: .8em;
+  padding-top: 0.8em;
 }
 
 .CodeMirror-gutters {
-  background-color: #CBD5E1;
+  background-color: #cbd5e1;
 }
 
 .CodeMirror-lines {
@@ -112,7 +111,7 @@ textarea:focus {
 }
 
 input[type="submit"] {
-  background-color: #23CE6B;
+  background-color: #23ce6b;
   color: white;
   border: none;
   margin: 10px;
@@ -122,12 +121,12 @@ input[type="submit"] {
   font-size: 1.1em;
   border-radius: 10px;
   cursor: pointer;
-  transition: all .1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 input[type="submit"]:hover {
   background-color: rgb(41, 223, 118);
-  box-shadow: 2px 2px 3px rgba(0, 0, 0, .07);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.07);
 }
 
 .submit h4 {
@@ -139,11 +138,11 @@ input[type="submit"]:hover {
 }
 
 .err label {
-  color: #FB6072;
+  color: #fb6072;
 }
 
 #status {
-  color: #647FA6;
+  color: #647fa6;
 }
 
 .main {
@@ -195,7 +194,6 @@ input[type="submit"]:hover {
   font-size: 2em;
 }
 
-
 .Box p {
   margin-top: 30px;
   font-size: 1.3em;
@@ -219,4 +217,19 @@ input[type="submit"]:hover {
   height: 100px;
   transform: translateY(-85px);
   border-radius: 10px;
+}
+
+@media screen and (max-width: 1300px) {
+  .Box-Grid {
+    grid-template-columns: 1fr 1fr;
+    padding: 10%;
+    grid-gap: 100px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .Box-Grid {
+    grid-template-columns: 1fr;
+    padding: 10%;
+    grid-gap: 120px;
+  }
 }

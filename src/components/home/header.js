@@ -1,7 +1,7 @@
 import React from "react";
 import "./style/header.css";
 import Card from "../user/card";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { logoutUser } from "../../actions/user";
 
@@ -13,7 +13,7 @@ class Header extends React.Component {
     };
     this.close = this.close.bind(this);
   }
-  
+
   componentDidMount() {
     window.addEventListener("scroll", () => {
       var header = document.querySelector(".Header");
@@ -27,7 +27,7 @@ class Header extends React.Component {
 
   close() {
     this.setState({
-      popup: "none"
+      popup: "none",
     });
   }
 
@@ -48,8 +48,7 @@ class Header extends React.Component {
         <div
           className="button"
           onClick={() => {
-            if (this.state.popup === "login")
-              this.setState({ popup: "none" });
+            if (this.state.popup === "login") this.setState({ popup: "none" });
             else this.setState({ popup: "login" });
           }}
         >
@@ -58,8 +57,7 @@ class Header extends React.Component {
         <div
           className="button"
           onClick={() => {
-            if (this.state.popup === "signup")
-              this.setState({ popup: "none" });
+            if (this.state.popup === "signup") this.setState({ popup: "none" });
             else this.setState({ popup: "signup" });
           }}
         >
@@ -67,14 +65,13 @@ class Header extends React.Component {
         </div>
       </div>
     );
-    
-    console.log(this.props);
+
     var header_right;
-    if (typeof(this.props.user.user) == "undefined") {
+    if (typeof this.props.user.user == "undefined") {
       header_right = login_register;
     } else {
       var user = (
-        <div className="buttons" >
+        <div className="buttons">
           <div className="button">
             <span>Dashboard</span>
           </div>
@@ -101,27 +98,19 @@ class Header extends React.Component {
           </div>
           <div className="Nav">
             <Link to="/docs" style={noneStyle}>
-              <div className="Item">
-                Docs
-              </div>
+              <div className="Item">Docs</div>
             </Link>
             <Link to="/docs" style={noneStyle}>
-              <div className="Item">
-                Pricing
-              </div>
+              <div className="Item">Pricing</div>
             </Link>
             <Link to="/IDE" style={noneStyle}>
-              <div className="Item">
-                IDE
-              </div>
+              <div className="Item">IDE</div>
             </Link>
             <Link to="/docs" style={noneStyle}>
-              <div className="Item">
-                Contact Us
-              </div>
+              <div className="Item">Contact Us</div>
             </Link>
           </div>
-          { header_right }
+          {header_right}
         </div>
         {elem}
       </div>
@@ -129,19 +118,19 @@ class Header extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    user: state.user
-  }
-}
+    user: state.user,
+  };
+};
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     logout: () => {
       dispatch(logoutUser());
-    }
-  }
-}
+    },
+  };
+};
 
 Header = connect(mapStateToProps, mapDispatchToProps)(Header);
 

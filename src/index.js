@@ -5,22 +5,7 @@ import * as serviceWorker from './serviceWorker';
 import './index.css';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import rootReducer from './reducers';
-import postData from './helpers/utils';
-import { API } from './config';
-import { addUser } from './actions/user';
-
-var token = localStorage.getItem('jwtToken');
-const store = createStore(rootReducer);
-console.log(token);
-if (token) {
-  console.log('hi');
-  postData(API + '/users/', {token: token})
-    .then((data) => {
-      store.dispatch(addUser(data.user));
-    });
-}
+import { store } from './store';
 
 ReactDOM.render(
   <Provider store={store}>
