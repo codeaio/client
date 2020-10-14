@@ -1,19 +1,21 @@
 import axios from "axios";
+import { API } from "../config";
 
-import {
-  CREATE_PROJECT,
-  UPDATE_PROJECT,
-  DELETE_PROJECT,
-  GET_PROJECT,
-  PROJECT_LOADING,
-  GET_PROJECTS,
-  PROJECTS_LOADING
-} from "./types";
+export const CREATE_PROJECT = "CREATE_PROJECT";
+export const UPDATE_PROJECT = "UPDATE_PROJECT";
+export const DELETE_PROJECT = "DELETE_PROJECT";
+export const GET_PROJECT = "GET_PROJECT";
+export const PROJECT_LOADING = "PROJECT_LOADING";
+export const GET_PROJECTS = "GET_PROJECTS";
+export const PROJECTS_LOADING = "PROJECTS_LOADING";
 
 // Create Project
 export const createProject = projectData => dispatch => {
+  console.log(projectData);
+  var token = localStorage.getItem("jwtToken");
+  console.log('createProject');
   axios
-    .post("/api/projects/create", projectData)
+    .post(API + "/projects/create", {...projectData, token: token })
     .then(res =>
       dispatch({
         type: CREATE_PROJECT,
@@ -25,8 +27,10 @@ export const createProject = projectData => dispatch => {
 
 // Update Project
 export const updateProject = projectData => dispatch => {
+  var token = localStorage.getItem("jwtToken");
+  console.log('updateProject');
   axios
-    .patch("/api/projects/update", projectData)
+    .patch(`${API}/projects/update`, {...projectData, token: token })
     .then(res =>
       dispatch({
         type: UPDATE_PROJECT,
@@ -38,8 +42,10 @@ export const updateProject = projectData => dispatch => {
 
 // Delete Project
 export const deleteProject = (id, history) => dispatch => {
+  var token = localStorage.getItem("jwtToken");
+  console.log('deleteProject');
   axios
-    .delete(`/api/projects/delete/${id}`)
+    .delete(`${API}/projects/delete/${id}`)
     .then(res =>
       dispatch({
         type: DELETE_PROJECT,
@@ -52,9 +58,11 @@ export const deleteProject = (id, history) => dispatch => {
 
 // Get specific project by id
 export const getProject = id => dispatch => {
+  var token = localStorage.getItem("jwtToken");
+  console.log('getProject');
   dispatch(setProjectLoading());
   axios
-    .get(`/api/projects/${id}`)
+    .get(`${API}/projects/${id}`, {token: token})
     .then(res =>
       dispatch({
         type: GET_PROJECT,
@@ -71,9 +79,12 @@ export const getProject = id => dispatch => {
 
 // Get all projects for specific user
 export const getProjects = () => dispatch => {
+  var token = localStorage.getItem("jwtToken");
+  console.log('getProjects');
+  console.log(token);
   dispatch(setProjectsLoading());
   axios
-    .get("/api/projects")
+    .get(`${API}/projects/`, {params: {token: token}})
     .then(res =>
       dispatch({
         type: GET_PROJECTS,

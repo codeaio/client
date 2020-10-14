@@ -6,7 +6,7 @@ import {
   PROJECT_LOADING,
   GET_PROJECTS,
   PROJECTS_LOADING
-} from "../actions/types";
+} from "../actions/projectsActions";
 
 const initialState = {
   projects: [],

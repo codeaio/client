@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { NavLink, Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { logoutUser } from "../../../actions/authActions";
 
 import "./SideNav.scss";
 
@@ -28,7 +27,7 @@ class SideNav extends Component {
 
   render() {
     const { projects } = this.props.projects;
-
+    console.log(projects);
     let projectData = projects.sort().map(project => (
       <li className="project-listing" key={project._id}>
         <Link to={`/projects/${project._id}`}>{project.name}</Link>
@@ -81,7 +80,6 @@ const mapStateToProps = state => ({
 
 export default withRouter(
   connect(
-    mapStateToProps,
-    { logoutUser }
+    mapStateToProps
   )(withRouter(SideNav))
 );

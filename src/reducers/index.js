@@ -9,10 +9,18 @@ import {
 } from "../actions/user";
 import { register, login } from "../helpers/utils";
 import { store } from "../store";
-import authReducer from "./authReducer";
-import errorReducer from "./errorReducer";
 import projectsReducer from "./projectsReducer";
-import tasksReducer from "./tasksReducer";
+import postData from '../helpers/utils';
+import { API } from '../config';
+
+var token = localStorage.getItem('jwtToken');
+if (token) {
+  console.log('hi');
+  postData(API + '/users/', {token: token})
+    .then((data) => {
+      store.dispatch(addUser(data.user));
+    });
+}
 
 var initalState = {
   hasError: false,
@@ -51,10 +59,7 @@ function user(state = initalState, action) {
 }
 
 const userApp = combineReducers({
-  auth: authReducer,
-  errors: errorReducer,
   projects: projectsReducer,
-  tasks: tasksReducer,
   user,
 });
 

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { logoutUser } from "../../../actions/authActions";
 import { Link, withRouter } from "react-router-dom";
 
 import "./TopNav.scss";
@@ -51,8 +50,12 @@ class TopNav extends Component {
   };
 
   render() {
-    const { name, email } = this.props.auth.user;
-
+    if (!this.props.auth) {
+      return (<></>);
+    }
+    console.log(this.props.auth);
+    var name = this.props.auth.name;
+    var email = this.props.auth.email;
     return (
       <nav className="top-nav" ref={node => (this.node = node)}>
         <div className="left-top">
@@ -99,11 +102,13 @@ class TopNav extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  auth: state.auth
-});
+const mapStateToProps = state => {
+  console.log(state);
+  return ({
+    auth: state.user.user
+  });
+}
 
 export default connect(
-  mapStateToProps,
-  { logoutUser }
+  mapStateToProps
 )(withRouter(TopNav));

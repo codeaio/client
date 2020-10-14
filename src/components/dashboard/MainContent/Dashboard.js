@@ -11,7 +11,6 @@ class Dashboard extends Component {
     modal: false,
     edit: false,
     name: "",
-    members: [],
     id: "",
     owner: {}
   };
@@ -74,7 +73,6 @@ class Dashboard extends Component {
               modal={this.state.modal}
               edit={this.state.edit}
               name={this.state.name}
-              members={this.state.members}
               id={this.state.id}
               owner={this.state.owner}
             />

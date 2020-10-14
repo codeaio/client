@@ -5,9 +5,14 @@ import Login from './components/user/login';
 import Signup from './components/user/signup';
 import IDE from './components/IDE';
 import Card from './components/user/card';
-import Layout from './components/dashboard/Layout';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
+import Modal from './components/dashboard/MainContent/Modal/Modal';
+import Project from './components/dashboard/MainContent/Project/Project';
+import Dashboard from './components/dashboard/MainContent/Dashboard';
+import SideNav from './components/dashboard/SideNav/SideNav';
+import TopNav from './components/dashboard/TopNav/TopNav';
+import Layout from './components/dashboard/Layout';
 
 class App extends React.Component {
   constructor(props) {
@@ -34,7 +39,12 @@ class App extends React.Component {
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
           <Route path="/IDE" component={IDE} />
-          <Route path="/dash" component={Layout} />
+          <Route path="/modal" component={Modal} />
+          <Route path="/project" component={Project} />
+          <Route path="/dashboard" component={Dashboard} />
+          <Route path="/sidenav" component={SideNav} />
+          <Route path="/topnav" component={TopNav} />
+          <Route path="/layout" component={Layout} />
           <Route path="/card">
             <Card type="signup" />
           </Route>
