@@ -50,7 +50,6 @@ class Layout extends Component {
                 projects={projects}
               />
               <Route exact path="/projects/:project" component={Project} />
-              <Route component={NotFound} />
             </Switch>
           </div>
         </>
@@ -68,7 +67,6 @@ class Layout extends Component {
                 projects={[]}
                 component={Dashboard}
               />
-              <Route component={NotFound} />
             </Switch>
           </div>
         </>

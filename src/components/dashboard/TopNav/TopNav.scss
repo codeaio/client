@@ -5,8 +5,7 @@
   justify-content: space-between;
   align-items: center;
   height: 70px;
-  border-bottom: 2px solid $lighterGray;
-  background-color: $white;
+  background-color: rgba(255, 255, 255, 0.1);
   position: fixed;
   width: 100%;
   min-width: 1100px;
@@ -37,7 +36,7 @@
     text-transform: uppercase;
     letter-spacing: 0.5rem;
     user-select: none;
-    color: $black;
+    color: white;
   }
 
   .brand-header-sub {
@@ -55,7 +54,7 @@
   .email {
     font-size: 10px;
     margin-right: 1rem;
-    color: $darkGray;
+    color: $lightGray;
     text-align: right;
     line-height: 0.5rem;
   }
@@ -133,6 +132,7 @@
 
 .hamburger-visible {
   display: block !important;
+  color: white;
 }
 
 .right-top-visibile {

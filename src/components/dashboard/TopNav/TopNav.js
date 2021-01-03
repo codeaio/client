@@ -67,14 +67,14 @@ class TopNav extends Component {
           </i>
           <Link to="/dashboard">
             <h1 className="brand-header">
-              Team<span className="brand-header-sub">s</span>
+              CODEAIO
             </h1>
           </Link>
         </div>
         <ul className="right-top">
           <li>
             <div className="email">
-              <p>Signed in as {email}</p>
+              <p>{email}</p>
             </div>
           </li>
           <li>

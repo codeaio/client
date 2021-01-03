@@ -64,9 +64,6 @@ class Dashboard extends Component {
       // At least one project
       content = (
         <>
-          <button className="main-btn" onClick={this.toggleModal}>
-            Create another project
-          </button>
           <div className="modal-wrapper">
             <Modal
               onClose={this.toggleModal}
@@ -77,7 +74,15 @@ class Dashboard extends Component {
               owner={this.state.owner}
             />
           </div>
-          <div className="projects-wrapper">{projectData}</div>
+          <div className="projects-wrapper">
+            {projectData}
+            <div
+              className="project-icon"
+              onClick={this.toggleModal}
+            >
+              <div className="project-name">+</div>
+            </div>
+          </div>
         </>
       );
     } else {

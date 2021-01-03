@@ -72,9 +72,11 @@ class Header extends React.Component {
     } else {
       var user = (
         <div className="buttons">
-          <div className="button">
-            <span>Dashboard</span>
-          </div>
+          <Link to="/layout" style={noneStyle}>
+            <div className="button">
+              <span>Dashboard</span>
+            </div>
+          </Link>
           <div
             className="button red"
             onClick={() => {

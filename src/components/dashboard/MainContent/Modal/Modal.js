@@ -124,7 +124,7 @@ class Modal extends Component {
           <span className="close-modal" onClick={this.onClose}>
             &times;
           </span>
-          <h1 className="header">Create a project</h1>
+          <h1 style={{margin: "20px 0", color: "black", fontWeight: "500", fontSize: "22px"}}>Create a project</h1>
           <div className="form-group">
             <label>
               <div className="form-label">Project Name (required)</div>

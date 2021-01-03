@@ -4,13 +4,15 @@
   width: 600px;
   background: white;
   border: 1px solid $gray;
+  color: black;
   animation: fade-in 0.25s;
   transform: scale(1);
   padding: 2rem;
   visibility: visible;
   position: fixed;
-  top: 8%;
-  height: 550px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 300px;
   z-index: 1000;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
 }
@@ -55,7 +57,7 @@
 }
 
 .form-input {
-  background-color: $lighterGray;
+  background-color: rgba(0, 0, 0, 0.1);
   border: 1px solid $lighterGray;
   border-radius: 4px;
   height: 40px;
