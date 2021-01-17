@@ -18,6 +18,9 @@ This project use following technologies
 - [x] Dashboard for project management
 - [x] VS CODE IDE
 - [x] Virtualization through Linux Container
+- [x] Project Isolation
+- [x] Store Your projects on cloud
+- [x] Access Your project from anywhere without installing any software
 
 ## Install
 
