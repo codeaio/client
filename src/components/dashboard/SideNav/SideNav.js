@@ -3,10 +3,11 @@ import { NavLink, Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 
 import "./SideNav.scss";
+import { logoutUser } from "../../../actions/user";
 
 class SideNav extends Component {
   onLogoutClick = e => {
-    this.props.logoutUser(this.props.history);
+    this.props.logoutUser();
     window.location.href = "/";
   };
 
@@ -65,8 +66,17 @@ const mapStateToProps = state => ({
   projects: state.projects
 });
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    logoutUser: () => {
+      dispatch(logoutUser());
+    },
+  };
+};
+
 export default withRouter(
   connect(
-    mapStateToProps
+    mapStateToProps,
+    mapDispatchToProps
   )(withRouter(SideNav))
 );

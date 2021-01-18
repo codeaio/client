@@ -1,0 +1,26 @@
+.AboutUs {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 0 25vw;
+  min-height: 100vh;
+}
+
+.AboutUs .heading {
+  color: var(--white);
+  font-size: 3em;
+}
+
+.AboutUs .text {
+  color: var(--white);
+  font-size: 1em;
+  line-height: 1.5em;
+  letter-spacing: 0.03em;
+}
+
+.AboutUs .article {
+  padding-top: 60px;
+}
+
+.AboutUs .heading2 {
+  margin-bottom: 20px;
+}

@@ -10,6 +10,15 @@
   outline: none;
 }
 
+:root {
+  --white: rgb(245 253 253);
+  --blue: #0063ce;
+  --green: #4b8e62;
+  --black: #1e1e1e;
+  --black2: #333333;
+  --black1: #252526;
+}
+
 body {
   margin: 0;
   background-color: #222831;

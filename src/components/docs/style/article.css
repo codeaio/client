@@ -1,14 +1,14 @@
 .Article {
-    padding-left: 10em;
-    padding-top: 80px;
-    padding-right: 10em;
+  background-color: var(--black);
+  padding-left: 10em;
+  padding-top: 80px;
+  padding-right: 10em;
 }
-.Article h1{
-    font-size: 60px;
-    margin: 0;
+.Article h1 {
+  font-size: 60px;
+  margin: 0;
 }
 .Article p {
-    margin-top: 1.5em;
-    font-size: 1.2em;
+  margin-top: 1.5em;
+  font-size: 1.2em;
 }
-

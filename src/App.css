@@ -10,7 +10,7 @@
   content: "Dark";
 }
 
-#color-mode:checked ~ .body {
+.body {
   filter: invert(0.87) hue-rotate(180deg);
 }
 
@@ -32,9 +32,11 @@
   cursor: pointer;
   border-radius: 5px;
 }
+
 .heading {
+  color: var(--black);
   display: inline-block;
-  margin: 20px;
+  margin: 60px 0 20px 0;
 }
 
 .ide {
@@ -174,7 +176,7 @@ input[type="submit"]:hover {
 }
 
 .Box-Grid {
-  background-color: #222831;
+  background-color: var(--black);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   padding: 200px;
@@ -182,7 +184,7 @@ input[type="submit"]:hover {
 }
 
 .Box {
-  background-color: #393e46;
+  background-color: var(--black1);
   color: #eee;
   z-index: 30;
   padding: 40px;

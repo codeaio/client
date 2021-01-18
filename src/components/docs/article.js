@@ -4,15 +4,27 @@ import './style/article.css';
 function Article() {
   return (
     <div className="Article">
-      <h1 className="heading">UI</h1>
-      <p className="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum cum nam natus, dolor ullam ratione quidem nulla eius accusantium quam, tempora dolorem aut quod voluptatum. Dolore molestiae reiciendis asperiores culpa amet, repudiandae aliquid exercitationem beatae itaque sequi explicabo totam facilis tempore odit impedit corporis eveniet error ullam, dolorem eum obcaecati?</p>
-      <p className="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum cum nam natus, dolor ullam ratione quidem nulla eius accusantium quam, tempora dolorem aut quod voluptatum. Dolore molestiae reiciendis asperiores culpa amet, repudiandae aliquid exercitationem beatae itaque sequi explicabo totam facilis tempore odit impedit corporis eveniet error ullam, dolorem eum obcaecati?</p>
-      <p className="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum cum nam natus, dolor ullam ratione quidem nulla eius accusantium quam, tempora dolorem aut quod voluptatum. Dolore molestiae reiciendis asperiores culpa amet, repudiandae aliquid exercitationem beatae itaque sequi explicabo totam facilis tempore odit impedit corporis eveniet error ullam, dolorem eum obcaecati?</p>
-      <p className="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, enim.</p>
-      <p className="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum cum nam natus, dolor ullam ratione quidem nulla eius accusantium quam, tempora dolorem aut quod voluptatum. Dolore molestiae reiciendis asperiores culpa amet, repudiandae aliquid exercitationem beatae itaque sequi explicabo totam facilis tempore odit impedit corporis eveniet error ullam, dolorem eum obcaecati?</p>
-      <p className="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum cum nam natus, dolor ullam ratione quidem nulla eius accusantium quam, tempora dolorem aut quod voluptatum. Dolore molestiae reiciendis asperiores culpa amet, repudiandae aliquid exercitationem beatae itaque sequi explicabo totam facilis tempore odit impedit corporis eveniet error ullam, dolorem eum obcaecati?</p>
-      <p className="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum cum nam natus, dolor ullam ratione quidem nulla eius accusantium quam, tempora dolorem aut quod voluptatum. Dolore molestiae reiciendis asperiores culpa amet, repudiandae aliquid exercitationem beatae itaque sequi explicabo totam facilis tempore odit impedit corporis eveniet error ullam, dolorem eum obcaecati?</p>
-      <p className="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, enim.</p>
+      <h1 className="heading">How To</h1>
+      <p className="text">
+        If you are new to the codeAio then click on the register and fill the details to become our member.
+        After registering, check your registered mail and verify the account(if you cannot find check your spam section).
+      </p>
+      <p className="text">
+        Just click the link and it will be verified.
+        After login, go to dashboard.
+      </p>
+      <p className="text">
+        Now click on dashboard and proceed to your project section.
+      </p>
+      <p className="text">
+        Create New Project.
+      </p>
+      <p className="text">
+        Give it a name and select template.
+      </p>
+      <p className="text">
+        Click on Go to project
+      </p>
     </div>
   );
 }

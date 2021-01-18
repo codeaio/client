@@ -4,3 +4,7 @@
   color: #eee;
   display: flex;
 }
+
+.Docs .heading {
+  color: var(--white);
+}

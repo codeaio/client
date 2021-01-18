@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
 
 import "./TopNav.scss";
+import { logoutUser } from "../../../actions/user";
 
 class TopNav extends Component {
   state = {
@@ -26,7 +27,7 @@ class TopNav extends Component {
 
   onLogoutClick = e => {
     e.preventDefault();
-    this.props.logoutUser(this.props.history);
+    this.props.logoutUser();
     window.location.href = "/";
   };
 
@@ -109,6 +110,15 @@ const mapStateToProps = state => {
   });
 }
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    logoutUser: () => {
+      dispatch(logoutUser());
+    },
+  };
+};
+
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(withRouter(TopNav));

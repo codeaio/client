@@ -36,7 +36,7 @@ class Dashboard extends Component {
     const { projects } = this.props.projects;
 
     let content;
-
+    console.log(projects);
     let projectData = projects.sort().map(project => (
       <div
         key={project._id}
@@ -56,7 +56,9 @@ class Dashboard extends Component {
         >
           Edit project
         </div>
-        <div className="project-info-button">Go to project</div>
+        <a href={`http://${project.container["bind-addr"]}/?folder=/root/${project.name}`}>
+          <div className="project-info-button">Go to project</div>
+        </a>
       </div>
     ));
 

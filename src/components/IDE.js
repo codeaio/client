@@ -124,7 +124,7 @@ export default class IDE extends Component {
                         <div className="main">
                             <div className="header">
                                 <h1 className="heading">C++ IDE</h1>
-                                <label htmlFor="color-mode" id="color">Dark</label>
+                                {/* <label htmlFor="color-mode" id="color">Dark</label> */}
                             </div>
                             <form onSubmit={this.handleSubmit}>
                                 <div className="ide">

@@ -2,6 +2,7 @@
 
 .modal {
   width: 600px;
+  height: 400px;
   background: white;
   border: 1px solid $gray;
   color: black;
@@ -12,7 +13,6 @@
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
-  height: 300px;
   z-index: 1000;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
 }
@@ -67,7 +67,8 @@
   transition: all 0.25s ease 0s;
   font-size: 16px;
   padding: 0 1rem;
-  margin-top: 0.5rem;
+  margin: 0.5rem 0;
+  margin-bottom: 1.5rem;
 
   &:hover {
     border-color: $gray;

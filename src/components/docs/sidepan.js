@@ -5,10 +5,9 @@ function Sidepan() {
   return (
     <div className="Sidepan">
       <ul>
-        <li className="active">UI</li>
-        <li>Config</li>
+        <li className="active">How To</li>
+        <li>FAQ</li>
         <li>Shortcut</li>
-        <li>Tutorial</li>
       </ul>
     </div>
   );

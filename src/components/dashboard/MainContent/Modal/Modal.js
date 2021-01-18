@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Select from "react-select";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import {
@@ -12,14 +13,22 @@ import "./Modal.scss";
 class Modal extends Component {
   state = {
     projectName: "",
+    selectedOption: {value: 'none', label: 'None'},
   };
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.edit) {
       this.setState({
         projectName: nextProps.name,
+
       });
     }
+  }
+
+  handleChange = selectedOption => {
+    this.setState({
+      selectedOption
+    });
   }
 
   onChange = e => {
@@ -29,6 +38,7 @@ class Modal extends Component {
   createProject = () => {
     let project = {
       projectName: this.state.projectName,
+      template: this.state.selectedOption.value,
     };
     console.log(project);
     this.props.createProject(project);
@@ -75,6 +85,7 @@ class Modal extends Component {
     };
     console.log(this.state);
     // Edit project modal
+    console.log(this.props);
     if (this.props.edit) {
       return (
         <div className="modal">
@@ -105,7 +116,7 @@ class Modal extends Component {
             >
               Update Project
             </button>
-            {this.props.owner.id === this.props.auth.user.id ? (
+            {this.props.owner._id === this.props.auth.user.id ? (
               <button
                 className="main-btn delete-project"
                 onClick={this.deleteProject.bind(this, this.props.id)}
@@ -118,7 +129,13 @@ class Modal extends Component {
       );
     }
     // Create project modal
-    else
+    else {
+      const options = [
+        { value: 'none', label: 'None'},
+        { value: 'nodejs', label: 'NodeJS'},
+        { value: 'java', label: 'Java'}
+      ]
+      const { selectedOption } = this.state;
       return (
         <div className="modal">
           <span className="close-modal" onClick={this.onClose}>
@@ -137,6 +154,14 @@ class Modal extends Component {
                 className="form-input"
               />
             </label>
+            <label>
+              <div className="form-label">Choose Template</div>
+              <Select
+                value={selectedOption}
+                onChange={this.handleChange}
+                options={options}
+              />
+            </label>
           </div>
           <div>
             <button
@@ -148,11 +173,12 @@ class Modal extends Component {
           </div>
         </div>
       );
+    }
   }
 }
 
 const mapStateToProps = state => ({
-  auth: state.auth,
+  auth: state.user,
   projects: state.projects,
   tasks: state.tasks
 });

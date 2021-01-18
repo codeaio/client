@@ -13,7 +13,7 @@ function Wrapper() {
         <div className="Box-Grid bg-blue">
           <div className="Box">
             <div className="Small-Box"></div>
-            <h2>TUTORIAL</h2>
+            <h2>How To</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, quo?</p>
             Read More
           </div>

@@ -1,7 +1,8 @@
 .Main {
+  overflow-x: hidden;
   height: 100vh;
-  background-color: #222831;
-  color: #eeeeee;
+  background-color: var(--black);
+  color: var(--white);
 }
 
 .Main-Block {
@@ -84,4 +85,17 @@ p span.cursor.typing {
   100% {
     background-color: #ccc;
   }
+}
+
+.Bg {
+  display: inline-block;
+  position: absolute;
+  z-index: -100;
+  top: -160px;
+  right: -400px;
+}
+
+.product-img {
+  display: inline-block;
+  width: 1200px;
 }

@@ -15,7 +15,6 @@ import SideNav from "./SideNav/SideNav";
 import TopNav from "./TopNav/TopNav";
 import Dashboard from "./MainContent/Dashboard";
 import Project from "./MainContent/Project/Project";
-import NotFound from "../404/404";
 
 import "./Layout.scss";
 
@@ -31,43 +30,13 @@ class Layout extends Component {
 
     if (projects === null || projectsLoading) {
       dashboardContent = <Spinner />;
-    } else if (projects.length > 0) {
+    } else {
       dashboardContent = (
         <>
           <SideNav projects={projects} />
           <div className="right">
             <TopNav />
-            <Switch>
-              <Route
-                exact
-                path="/dashboard"
-                projects={projects}
-                component={Dashboard}
-              />
-              <Route
-                exact
-                path="/tasks"
-                projects={projects}
-              />
-              <Route exact path="/projects/:project" component={Project} />
-            </Switch>
-          </div>
-        </>
-      );
-    } else {
-      dashboardContent = (
-        <>
-          <SideNav />
-          <div className="right">
-            <TopNav />
-            <Switch>
-              <Route
-                exact
-                path="/dashboard"
-                projects={[]}
-                component={Dashboard}
-              />
-            </Switch>
+            <Dashboard />
           </div>
         </>
       );

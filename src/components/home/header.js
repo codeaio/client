@@ -102,14 +102,11 @@ class Header extends React.Component {
             <Link to="/docs" style={noneStyle}>
               <div className="Item">Docs</div>
             </Link>
-            <Link to="/docs" style={noneStyle}>
-              <div className="Item">Pricing</div>
-            </Link>
             <Link to="/IDE" style={noneStyle}>
-              <div className="Item">IDE</div>
+              <div className="Item">Free IDE</div>
             </Link>
-            <Link to="/docs" style={noneStyle}>
-              <div className="Item">Contact Us</div>
+            <Link to="/aboutus" style={noneStyle}>
+              <div className="Item">About Us</div>
             </Link>
           </div>
           {header_right}

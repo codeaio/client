@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./style/main.css";
 import { Link } from "react-router-dom";
 import anim from './util/main-anime.js';
+import productImage from "../../img/product.png";
 
 export default class Main extends Component {
   componentDidMount() {
@@ -24,7 +25,9 @@ export default class Main extends Component {
               </div>
             </Link>
           </div>
-          <div className="Bg"></div>
+          <div className="Bg">
+            <img className="product-img" src={productImage}></img>
+          </div>
         </div>
       </div>
     );
