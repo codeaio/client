@@ -10,26 +10,6 @@ function Wrapper() {
         <Main />
         <Footer/>
         <div>
-        <div className="Box-Grid bg-blue">
-          <div className="Box">
-            <div className="Small-Box"></div>
-            <h2>How To</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, quo?</p>
-            Read More
-          </div>
-          <div className="Box">
-          <div className="Small-Box"></div>
-            <h2>CONFIG</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, quo?</p>
-            Read More
-          </div>
-          <div className="Box">
-            <div className="Small-Box"></div>
-            <h2>CONFIG</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, quo?</p>
-            Read More
-          </div>
-        </div>
       </div>
     </div>
   );

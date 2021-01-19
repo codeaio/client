@@ -28,13 +28,13 @@ function AboutUs() {
             Kartik Prajapati -- <i>System Architect</i>
           </p>
           <p class="text">
-            Dhruv Chauhan -- <i>Frontend Developer</i>
+            Dhruv Chauhan -- <i>Backend Developer</i>
           </p>
           <p class="text">
             Jay Luhar -- <i>Database Engineer</i>
           </p>
           <p class="text">
-            Aum Patel -- <i>Backend Engineer</i>
+            Aum Patel -- <i>Frontend Engineer</i>
           </p>
         </div>
       </div>

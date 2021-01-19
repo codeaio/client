@@ -114,8 +114,9 @@ textarea:focus {
 
 input[type="submit"] {
   background-color: #23ce6b;
-  color: white;
+  color: var(--black);
   border: none;
+  font-weight: bold;
   margin: 10px;
   margin-left: 20px;
   margin-right: 0;

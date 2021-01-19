@@ -91,11 +91,12 @@ p span.cursor.typing {
   display: inline-block;
   position: absolute;
   z-index: -100;
-  top: -160px;
+  top: 50%;
+  transform: translateY(-40%);
   right: -400px;
 }
 
 .product-img {
   display: inline-block;
-  width: 1200px;
+  width: 60vw;
 }

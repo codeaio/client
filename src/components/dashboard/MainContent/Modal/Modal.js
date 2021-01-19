@@ -131,9 +131,10 @@ class Modal extends Component {
     // Create project modal
     else {
       const options = [
-        { value: 'none', label: 'None'},
-        { value: 'nodejs', label: 'NodeJS'},
-        { value: 'java', label: 'Java'}
+        { value: 'none', label: 'None' },
+        { value: 'nodejs', label: 'NodeJS' },
+        { value: 'java', label: 'Java' },
+        { value: 'react', label: 'React' },
       ]
       const { selectedOption } = this.state;
       return (

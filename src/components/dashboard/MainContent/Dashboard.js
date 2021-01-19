@@ -41,7 +41,6 @@ class Dashboard extends Component {
       <div
         key={project._id}
         className="project-icon"
-        onClick={() => this.props.history.push(`/projects/${project._id}`)}
       >
         <div className="project-name">{project.name}</div>
         <div
@@ -56,7 +55,7 @@ class Dashboard extends Component {
         >
           Edit project
         </div>
-        <a href={`http://${project.container["bind-addr"]}/?folder=/root/${project.name}`}>
+        <a href={`http://localhost/container/${project.container["bind-addr"]}/?folder=/root/${project.name}`}>
           <div className="project-info-button">Go to project</div>
         </a>
       </div>
